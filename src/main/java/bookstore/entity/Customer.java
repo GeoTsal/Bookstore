@@ -7,6 +7,7 @@ package bookstore.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -20,6 +21,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -47,7 +50,6 @@ import org.springframework.format.annotation.DateTimeFormat;
     , @NamedQuery(name = "Customer.findByStreetnumber", query = "SELECT c FROM Customer c WHERE c.streetnumber = :streetnumber")
     , @NamedQuery(name = "Customer.findByPostalcode", query = "SELECT c FROM Customer c WHERE c.postalcode = :postalcode")
     , @NamedQuery(name = "Customer.findByDateofbirth", query = "SELECT c FROM Customer c WHERE c.dateofbirth = :dateofbirth")
-    , @NamedQuery(name = "Customer.findByPaypalaccount", query = "SELECT c FROM Customer c WHERE c.paypalaccount = :paypalaccount")
     , @NamedQuery(name = "Customer.findByDiscountcoupon", query = "SELECT c FROM Customer c WHERE c.discountcoupon = :discountcoupon")})
 public class Customer implements Serializable {
 
@@ -61,7 +63,6 @@ public class Customer implements Serializable {
     @Size(min = 1, max = 60)
     @Column(name = "lastname")
     private String lastname;
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
@@ -86,7 +87,12 @@ public class Customer implements Serializable {
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 200)
+    @Column(name = "city")
+    private String city;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 200)
     @Column(name = "street")
     private String street;
     @Basic(optional = false)
@@ -94,15 +100,12 @@ public class Customer implements Serializable {
     @Column(name = "streetnumber")
     private int streetnumber;
     @Basic(optional = false)
-    @NotNull
+    @NotNull()
     @Column(name = "postalcode")
     private int postalcode;
     @Column(name = "dateofbirth")
-    @DateTimeFormat(pattern= "yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate dateofbirth;
-    @Size(max = 60)
-    @Column(name = "paypalaccount")
-    private String paypalaccount;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -215,8 +218,9 @@ public class Customer implements Serializable {
 
     @Override
     public String toString() {
-        return "Customer{" + "customerid=" + customerid + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", phone=" + phone + ", username=" + username + ", password=" + password + ", country=" + country + ", street=" + street + ", streetnumber=" + streetnumber + ", postalcode=" + postalcode + ", dateofbirth=" + dateofbirth + ", paypalaccount=" + paypalaccount + ", discountcoupon=" + discountcoupon + ", cartList=" + cartList + ", role=" + role + '}';
+        return "Customer{" + "firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", phone=" + phone + ", username=" + username + ", password=" + password + ", city=" + city + ", street=" + street + ", streetnumber=" + streetnumber + ", postalcode=" + postalcode + ", dateofbirth=" + dateofbirth + ", customerid=" + customerid + ", country=" + country + ", discountcoupon=" + discountcoupon + ", cartList=" + cartList + ", role=" + role + '}';
     }
+
 
     public String getFirstname() {
         return firstname;
@@ -266,6 +270,14 @@ public class Customer implements Serializable {
         this.password = password;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String getStreet() {
         return street;
     }
@@ -298,12 +310,5 @@ public class Customer implements Serializable {
         this.dateofbirth = dateofbirth;
     }
 
-    public String getPaypalaccount() {
-        return paypalaccount;
-    }
-
-    public void setPaypalaccount(String paypalaccount) {
-        this.paypalaccount = paypalaccount;
-    }
 
 }

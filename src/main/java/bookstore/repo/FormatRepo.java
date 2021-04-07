@@ -5,8 +5,7 @@
  */
 package bookstore.repo;
 
-import bookstore.entity.Booktype;
-import java.util.List;
+import bookstore.entity.Format;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author Dell
  */
 @Repository
-public interface BooktypeRepo extends JpaRepository<Booktype, Integer> {
+public interface FormatRepo extends JpaRepository<Format, Integer> {
     
      
 }

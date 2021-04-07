@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <title>JSP Page</title>
-        <script src="./javascript/dropDownBtn.js"</script> 
+        <script src="./javascript/dropDownBtn.js"></script> 
          <link rel="stylesheet" href="./css/specificBook.css">
          
         </head>
@@ -16,17 +16,17 @@
         
         
         <div class="frontcover">
-        <img class="frontcover" src="${book.frontcover}"
+        <img class="frontcover" src="${bookdetails.book.frontcover}"
         alt="frontcover not found">
         </div>
         
         <div class="bookDetails">
         <span class=title>${book.title}</span>
         <span class="booktype-dropdown">
-        <button onclick="myFunction()" class="dropbtn">${book.booktype.name}</button>
+        <button onclick="myFunction()" class="dropbtn">${bookdetails.book.format.name}</button>
                 <div id="myDropdown" class="dropdown-content">
         <c:forEach items="${SameBooksDifFormat}" var="book">
-        <a href="${pageContext.request.contextPath}/books/search/{bookid}">${book.booktype.name}</a>
+        <a href="${pageContext.request.contextPath}/books/search/{bookid}">${bookdetails.book.format.name}</a>
         </c:forEach>
         </div>
         </span>
@@ -37,12 +37,12 @@
         </a>
         </c:forEach>
         <br>
-        <div class="stock">&check;  ${book.count} in stock</div>
+        <div class="stock">&check;  ${bookdetails.book.count} in stock</div>
         <br>
         <br>
         <br>
         <h3 class="secTitle">Description <hr></h3>
-        <p class=description>${book.description}
+        <p class=description>${bookdetails.book.description}
         </p>
                 <br>
                 <h3 class="secTitle">Information<hr></h3>
@@ -51,35 +51,35 @@
          <span>${category.name}  </span>
         </c:forEach></li>
         <br>
-        <li>publisher:   <span class="info">${book.publisher}</span></li>
+        <li>publisher:   <span class="info">${bookdetails.book.publisher}</span></li>
         <br>
-        <li>publication date:   <span class="info">${book.publicationdate}</span></li>
+        <li>publication date:   <span class="info">${bookdetails.book.publicationdate}</span></li>
         <br>
-        <li>edition:   <span class="info">${book.edition}</span></li>
+        <li>edition:   <span class="info">${bookdetails.book.edition}</span></li>
         <br>
-        <li>language:   <span class="info">${book.language}</span></li>
+        <li>language:   <span class="info">${bookdetails.book.language}</span></li>
         <br>
-        <li>pages:   <span class="info">${book.pages}</span></li>
+        <li>pages:   <span class="info">${bookdetails.book.pages}</span></li>
         <br>
-        <li>booktype:   <span class="info">${book.booktype.name}</span></li>
+        <li>booktype:   <span class="info">${bookdetails.book.format.name}</span></li>
         <br>
-        <li>isbn10:  <span class="info">${book.isbn10}</span></li>
+        <li>isbn10:  <span class="info">${bookdetails.book.isbn10}</span></li>
         <br>
-        <li>isbn13:  <span class="info">${book.isbn13}</span></li>
+        <li>isbn13:  <span class="info">${bookdetails.book.isbn13}</span></li>
                 </ul>
                 </div>
         
         <div class=cartBox>
-        <div>Price: ${book.price}</div>
+        <div>Price: ${bookdetails.book.price}</div>
         <div>Delivery costs:</div>
         <br>
         <a href="bookstore/cart">Add to basket</a>
         </div>
         <div class=relatedBooks>
         <h3 class=blockTitle>Also by the same author</h3>
-        <c:forEach items= "${booksFromSameAuthor}" var="book">
-         <div>${book.frontcover}</div>
-         <a class=bookpage href=${pageContext.request.contextPath}/books/search/{bookid}>${book.title}</a>
+        <c:forEach items= "${booksdetailsFromSameAuthor}" var="book">
+         <div>${bookdetails.book.frontcover}</div>
+         <a class=bookpage href=${pageContext.request.contextPath}/books/search/{bookid}>${bookdetails.book.title}</a>
          <br> 
          <div>Add to cart<div/>
         </c:forEach>

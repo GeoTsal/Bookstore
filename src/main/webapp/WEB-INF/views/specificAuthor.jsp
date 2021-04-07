@@ -13,6 +13,81 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <title>JSP Page</title>
+            <style> * {
+    font-size: 16px;
+
+}
+body {
+    margin:0% 8%;
+    
+}
+
+
+.container>div {
+    text-align: left;
+    padding:25px 25px;
+}
+
+div.header {
+   height: 210px;
+}
+
+div.img1 {
+    width:28%;
+    height:25%;
+    
+}
+img.img1 {
+    border:solid yellow;
+}
+
+div.text1 {
+    width: 70%;
+    position:relative;
+    left: 270px;
+    bottom: 340px;
+}
+
+div.img2 {
+    width: 25.2%;
+    height:22.5%;
+    position:relative;
+    bottom:180px;
+}
+
+div.text2 {
+    width: 70%;
+    position:relative;
+    left: 300px;
+    bottom: 610px;
+    
+};
+
+.title {
+    font-size: 23px;
+}
+
+p {
+    line-height: 200%;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.books>div {
+    float:left;
+    padding: 1.5%;
+    position:relative;
+    bottom: 550px;
+}
+.title {
+    font-size: 23px;
+}
+
+a{
+    background-color: yellow;
+}
+</style>
         </head>
         <body>
             <div class="container">
@@ -29,18 +104,11 @@
         </div>
         <div class="text2">
             <div class="title" style=text-align:center;>New From  ${author.firstname}  ${author.lastname}<hr></div>
-            <div class="title">The Lost Hours</div>
-            <p class="desc">Don't miss the gripping new novel from the Sunday Times bestselling author, Susan Lewis.
-
-                A perfect marriage... Golden couple Annie and David Crayce have it all. A loving marriage, three beautiful children and a thriving family business.
-                Life couldn't be better. Until the unthinkable happens... A perfect crime? A piece of damning DNA evidence has arisen, placing David as the prime suspect of a murder committed twenty-years ago.
-                Annie is sure her David is innocent. But if he isn't guilty, then either his father or brother must be. As the police investigate the cold case, so does Annie.
-                Trawling through her old diaries, she begins desperately looking for answers.
-                But it all comes down to a few lost hours she can't solve. And Annie begins to doubt the one person she thought she knew best... Her husband.
-            </p>
+            <div class="title">${sortedBookdetails.book.title}</div>
+            <p class="desc">${sortedBookdetails.book.descripition}</p>
             <br>
             <br>
-            <div class="price">Price: 21,99$$</div>
+            <div class="price">${sortedBookdetails.book.price} $</div>
             <a href="fake">Add to cart</a>
         </div>
         <div class="books">
@@ -49,27 +117,13 @@
             <br>
             <br>
             <br>
-            <div class="book1">
-                <img src="https://hive.dmmserver.com/media/356/97800082/9780008286927.jpg" alt="not found">
-                <div class="title">Forgive Me</div>
+            <c:forEach items= "${sortedbookDetails}" var="sortedbookDetails">
+            <div class="book">
+                <img class="frontcover"src="${sortedbookDetails.frontcover}" alt="not found">
+                <div class="title">${sortedbookDetails.book.title}</div>
                 <a href="fake">Add to cart</a>
             </div>
-            <div class="book2">
-                <img src="https://hive.dmmserver.com/media/356/97800082/9780008286835.jpg" alt="not found">
-                <div class="title">My Lies</div>
-                <a href="fake">Add to cart</a>
-            </div>
-            <div class="book3">
-                <img src="https://hive.dmmserver.com/media/356/97800082/9780008286828.jpg" alt="not found">
-                <div class="title">Home Truths</div>
-                <a href="fake">Add to cart</a>
-            </div>
-            <div class="book4">
-                <img src="https://hive.dmmserver.com/media/356/97817847/9781784755621.jpg" alt="not found">
-                <div class="title">Home Secrets</div>
-                <a href="fake">Add to cart</a>
-            </div>
-        </div>
+            </c:forEach>
         <div class="footer"></div>
         </body>
     </html>
