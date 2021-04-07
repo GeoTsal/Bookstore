@@ -8,7 +8,7 @@ import bookstore.repo.AuthorRepo;
 import bookstore.repo.BookRepo;
 import bookstore.repo.BooktypeRepo;
 import bookstore.repo.CategoryRepo;
-import bookstore.service.BookServiceImpl;
+import bookstore.service.BookService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +34,7 @@ public class HomeController {
     BooktypeRepo booktypeRepo;
     
     @Autowired
-    BookServiceImpl bookService;
+    BookService bookService;
     
 
     //*****all categories in homepage as options in select tag in 

@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class BookServiceImpl {
+public class BookService {
     
 @Autowired
 AuthorRepo authorRepo;    
