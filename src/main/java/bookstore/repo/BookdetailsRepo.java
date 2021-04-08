@@ -17,10 +17,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookdetailsRepo extends JpaRepository<Bookdetails,Integer> {
     
-    @Query(value="select book.* from book where book.bookid!=?1 and book.title=?2", nativeQuery = true)
-    List<Bookdetails> findSameBooksDifFormat( int bookid, String booktitle);
+    @Query(value="select bookdetails.* from bookdetails where bookdetails.bookid=?1 and bookdetails.format!=?2", nativeQuery = true)
+    List<Bookdetails> findBooksSameIdDifFormat( int bookid, int format);
     
-     @Query(value="select bookdetails.* from book, bookdetails, format where book.bookid = bookdetails.bookid and format.formatid = bookdetails.formatid"
+     @Query(value="select bookdetails.* from book,bookdetails,format where book.bookid = bookdetails.bookid and format.formatid = bookdetails.formatid"
       + " and book.bookid =?1 and format.formatid=?2", nativeQuery = true)
       Bookdetails findByBookidandFormatid(int bookid, int formatid);  
     

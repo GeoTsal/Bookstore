@@ -208,7 +208,7 @@
       <header><b>Authors</b></header>
       <c:forEach items="${authors}" var="author">
       <div>
-        <b><a href="${pageContext.request.contextPath}/authors/${author.lastname}">${author.lastname}</a></b>
+        <b><a href="${pageContext.request.contextPath}/authors/${author.authorid}">${author.lastname}</a></b>
       </div>
       </c:forEach>
       

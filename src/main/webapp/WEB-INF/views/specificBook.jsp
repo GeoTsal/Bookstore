@@ -25,14 +25,14 @@
         <span class="booktype-dropdown">
         <button onclick="myFunction()" class="dropbtn">${bookdetails.book.format.name}</button>
                 <div id="myDropdown" class="dropdown-content">
-        <c:forEach items="${SameBooksDifFormat}" var="book">
-        <a href="${pageContext.request.contextPath}/books/search/{bookid}">${bookdetails.book.format.name}</a>
+        <c:forEach items="${BooksSameIdDifFormat}" var="book">
+        <a href="${pageContext.request.contextPath}/books/search/${BooksSameIdDifFormat.book.bookid}">${bookdetails.book.format.name}</a>
         </c:forEach>
         </div>
         </span>
         <br>
         <c:forEach items= "${authorsByBook}" var="author">
-        <a class=authorPage href="specificAuthor">
+        <a class=authorPage href="${pageContext.request.contextPath}/authors/${authorsByBook.authorid}{>
         <h3><span>by</span>  ${author.firstname} ${author.lastname}</h3>
         </a>
         </c:forEach>
@@ -79,7 +79,7 @@
         <h3 class=blockTitle>Also by the same author</h3>
         <c:forEach items= "${booksdetailsFromSameAuthor}" var="book">
          <div>${bookdetails.book.frontcover}</div>
-         <a class=bookpage href=${pageContext.request.contextPath}/books/search/{bookid}>${bookdetails.book.title}</a>
+         <a class=bookpage href=${pageContext.request.contextPath}/books/search/${booksdetailsFromSameAuthor.bookid}>${bookdetails.book.title}</a>
          <br> 
          <div>Add to cart<div/>
         </c:forEach>

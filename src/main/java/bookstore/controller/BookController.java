@@ -46,9 +46,9 @@ public class BookController {
          List<Bookdetails> booksdetailsFromSameAuthor= bookdetailsService.findBooksdetailsFromSameAuthor(id);
          model.addAttribute("booksdetailsFromSameAuthor",booksdetailsFromSameAuthor);
          
-        String bookTitle = bookdetails.getBook().getTitle();
-        List<Bookdetails> SameBooksDifFormat = bookdetailsRepo.findSameBooksDifFormat(id, bookTitle);
-        model.addAttribute("SameBooksDifFormat", SameBooksDifFormat);
+        int format= bookdetails.getFormat().getFormatid();
+        List<Bookdetails> BooksSameIdDifFormat = bookdetailsRepo.findBooksSameIdDifFormat(id, format);
+        model.addAttribute("BooksSameIdDifFormat", BooksSameIdDifFormat);
 
         List<Category> categByBook = categoryRepo.findByBook(id);
         model.addAttribute("categByBook", categByBook);

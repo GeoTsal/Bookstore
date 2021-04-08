@@ -21,20 +21,77 @@
         <br>
         
         <h2>Your Account Details</h2>
+        <h2>You can edit them</h2>
+    <form:form  action="${pageContext.request.contextPath}/logout" method="POST" modelAttribute = "customer">
+
+           <label for="firstname">First Name</label>
+
+            <form:input path="firstname" id="firstname"  value="${customer.firstname}"/>
+
+            <br>
+
+            <label for="lastname">Last Name</label>
+
+            <form:input path="lastname" id="lastname"  value="${customer.lastname}"/>
+
+            <br>
+
+            <label for="email" >Your Email</label>
+
+            <form:input type="email" path="email" id="email"  value="${customer.email}"/>
+
+            <br>
+
+            <label for="username">Username</label>
+
+            <form:input path="username" id="username"  value="${customer.username}"/>
+            <form:errors path="username"  />
+
+            <br>
+
+            <label for="password">Password</label>
+
+            <form:input path="password" id="password"  value="${customer.password}"/>
+
+
+            <br>
+
+            <label for="country">Country</label>
+            
+            <form:select path = "country.countryid">
+
+                <form:option value=""> --Select Country--</form:option>
+
+                <c:forEach var = "country" items = "${countries}">
+                    <form:option value="${country.countryid}"> ${country.name}</form:option>                 
+                </c:forEach>
+
+            </form:select>
+
+
+            <br>
+
+
+            <label for="street">Address</label>
+
+            <form:input path="street" id="street" value="${customer.street}"/>
+            <form:input path="streetnumber" id="streetnumber"  value="${customer.streetnumber}"/>
+            <form:input path="postalcode" id="postalcode"  value="${customer.postalcode}"/>
+
+            <br>
+
+            <label for="dateofbirth">Date of Birth</label>
+
+            <form:input type="date" path="dateofbirth" id="dateofbirth"  value="${customer.dateofbirth}"/>
+
+            <br>
+
+            <label for="paypalaccount">PayPal Account</label>
+            <form:input path="paypalaccount" id="paypalaccount"  value="${customer.paypalaccount}"/>
+
+            <br>
+            <input type="submit" value="Logout">
+     </form:form>
         
-        
-        
-        <p>First Name: ${customer.firstname}</p>
-        <p>Last Name: ${customer.lastname}</p>
-        <p>Email: ${customer.email}</p>
-        <p>Username: ${customer.username}</p>
-        <p>Password: ${customer.password}</p>
-        <p>Country: ${customer.country}</p>
-        <p>Street: ${customer.street}</p>
-         <p>Street number: ${customer.streetnumber}</p>
-         
-         <form:form action="${pageContext.request.contextPath}/logout" method="POST">
-                <input type="submit" value="Logout">
-            </form:form>
     </body>
 </html>
