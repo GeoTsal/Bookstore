@@ -84,7 +84,7 @@
         <div class="main-menu-item-modal" id="main-menu-item-authors" style="display: none;" onchange="location=this.value">>
      
                 <c:forEach items="${authors}" var="author">
-                    <a href="${pageContext.request.contextPath}/authors/${author.lastname}">${author.lastname}</a>
+                    <a href="${pageContext.request.contextPath}/authors/${author.authorid}">${author.lastname}</a>
                 </c:forEach>           
         </div>
         

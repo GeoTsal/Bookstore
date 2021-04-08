@@ -117,8 +117,8 @@ a{
             <br>
             <br>
             <br>
-            <c:forEach items= "${sortedbookDetails}" var="sortedbookDetails">
             <div class="book">
+            <c:forEach items= "${sortedbookDetails}" var="sortedbookDetails" begin="1">
                 <img class="frontcover"src="${sortedbookDetails.frontcover}" alt="not found">
                 <div class="title">${sortedbookDetails.book.title}</div>
                 <a href="fake">Add to cart</a>

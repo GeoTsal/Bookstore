@@ -18,7 +18,7 @@ public class AuthorController {
     @Autowired
     AuthorRepo authorRepo;
     
-     @GetMapping("authors/{authorId}")
+     @GetMapping("/bookstore/authors/{authorId}")
    public String showSpecificAuthor(@PathVariable("authorId") int authorId , Model model){
          Author author=authorRepo.findByAuthorid(authorId);
          model.addAttribute("author",author);
