@@ -59,7 +59,7 @@ public class CartController {
     @GetMapping("/index")
     public String showCart() {
 
-        return "cart";
+        return "cart-index";
 
     }
 
