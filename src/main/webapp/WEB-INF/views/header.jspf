@@ -11,17 +11,245 @@
 <head>
     <title>TODO supply a title</title>
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!--  <link href="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/george.css" rel="stylesheet" type="text/css"/> -->
+<style>
+header {
+     box-sizing: content-box ;    
+     width: 1182px ; 
+     margin: 0 auto;
+     display: flex;
+     flex-flow: column;
+     height: 150px;
+}
 
+#top-box {
+    width: 100vw;
+    height: 15px;
+    position: fixed;
+    z-index: 2;
+    background-color: #ffd04d;
+    right: 0px;
+    top: 0;
+}  
+#top-container {
+    height: 70px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 1182px;
+    top: 50px;
+    position: relative;
+}
+#logo {
+	/* ; */
+	cursor: pointer;
+	position: relative;
+	/*! top: 50px; */
+	/* left: 60px; */
+	margin-left: 20px;
+        height: 60px;
+	flex: 0 0 270px;
+}
+
+#search {
+
+	display: inline-flex;
+	position: relative;
+	margin: 0 20px;
+	/* padding-top: 20px; */
+	/*! top: 50px; */
+	height: 60px;
+	/*! width: 450px; */
+	/*! float: right; */	font-size: 16pt;
+	/*! flex: 1 1; */
+}
+#searchBar {
+	position: relative;
+	display: inline-flex;
+	/*! width: 200px; */
+	/*! flex: 0 0 60px; */
+	/*! border-radius: 3px 0 0 3px; */
+	/*! margin: 0 auto; */
+	/*! left: 100px; */
+	/*! top: 15px; */
+}
+input#searchField {
+    position: relative;
+ left: 0;   
+ font-size: 16px;
+ margin: 0;
+}
    
-    <link href="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/george.css" rel="stylesheet" type="text/css"/>
-<script>
-    let loginModal = document.getElementById("login-modal");
-    function toggleModal()
-    {
-        if (loginModal.style.display !== "inline-block") loginModal.style.display = "inline-block";
-        else loginModal.style.display = "none";
-    } 
-</script>
+#searchBar #searchBox input[type="submit"] {
+	display: flex;
+	flex: 0 0 40px;
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 24px;
+	padding-left: 24px;
+	background-color: #ffd04d;
+	height: 60px;
+
+	color: #ffd04d;
+	cursor: pointer;
+	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/magnifier.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 19px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ffd04d;
+	border-radius: 0 3px 3px 0;
+        margin: 0 0 0 -2px;
+	font-size: 0;
+        left: 0;
+    }
+
+#account-checkbox {
+        /*! left: 3%; */
+	/*! bottom: 30px; */
+	position: relative;
+        height: 40px;
+        
+	background-color: white;
+	border: none;
+	border-bottom: 3px solid #2794ad;
+	font-size: 14pt;
+        height: 30px;
+}
+
+.myAccount {
+	/* display: flex; */
+	position: relative;
+	height: min-content;
+	top: 10;
+	/* left: 70%; */
+	/* flex: 0 0 800px; */
+}
+.myAccount p {
+    font-family: "Georgia", serif;
+    font-style: oblique;
+    font-size: 12pt;
+    border: none;
+    bottom: 2px;
+    /*! position: absolute; */
+    width: max-content;
+    margin: 0;
+}
+.myAccount-modal {
+        position: relative;
+        display: inline-block;
+        left: 350px;
+        top: 20px;
+    }
+    
+#my-account-menu {
+ padding: 15px;
+}
+
+#login-modal {
+	position: absolute;
+	font-family: Helvetica, Arial, sans-serif;
+	z-index: 10;
+	height: auto;
+	width: 200px;
+	background-color: white;
+	color: #2794ad;
+	display: none;
+	border-radius: 5px;
+	border: 1px solid #cccccc;
+	right: 105px;
+	top: 75px;
+	/* width: min-content; */        font-size: 14pt;
+        text-decoration: none;
+	text-align: start;
+	box-shadow: 3px 3px 12px lightgrey;
+}
+   
+#command {
+ display: grid;
+ background: none;
+ /*! color: beige; */
+}
+
+#cart {
+	position: relative;
+	display: flex;
+	color: black;
+	top: 10px;
+	cursor: pointer;
+	/* margin-left: 40px; */
+	height: 80px;
+	width: 80px;
+	/*! flex: 0 0; */
+	/*! left: 30px; */
+	/*! bottom: 20px; */
+}
+
+#cart-img {
+	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/basket-empty.png");
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	bottom: 28px;
+	right: 3px;
+}
+
+#cart-elipse {
+    background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/basket+elipse.png");
+	background-size: 40px 35px;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 40px;
+    z-index: -1;
+    bottom: 6px;
+}
+#cart-amount {        
+    position: relative;
+    /*! top: 34px; */
+    left: 28;
+    /*! width: min-content; */
+    /*! z-index: 2; */
+    /*! height: min-content; */
+}  
+#cart a {
+	/*! bottom: 200px; */
+        /*! left: 36px; */
+	position: relative;
+        text-decoration: none;
+        color: black;
+        display: block;
+}   
+    
+.clickable {
+ height: 80px;
+ width: 80px;
+ /*! right: 50px; */
+ position: relative;
+}
+  
+
+.clickable p {  
+	margin: 0;
+	width: min-content;
+	position: relative;
+	bottom: 25px;
+	left: 4px;
+}
+
+#main-header > hr {
+ height: 1px;
+ border-width: 0;
+ background-color: #aba8a8;
+ top: 70px;
+ position: relative;
+ width: inherit;
+}
+      
+</style>
+
 </head>
 
 <body>
@@ -137,12 +365,20 @@
               
              <div id="cart-amount"><%=cartAmount%>​​​​​​​</div>
              <div class="clickable">
-            <a id="cart-img" href="${pageContext.request.contextPath}/cart/index"></a>
+            <a id="cart-elipse"></a>     
+            <a id="cart-img" ></a>
             <p>Cart</p>
             </div>  
         </div>         
     </div>
 
 <hr style="height: 1px; border-width: 0; color: #e0e0e0; background-color: #e0e0e0;"/>
-    
+ <script>
+    let loginModal = document.getElementById("login-modal").style;
+    function toggleModal()
+    {
+        if (loginModal.display !== "inline-block") loginModal.display = "inline-block";
+        else loginModal.display = "none";
+    } 
+</script>   
 </header>
