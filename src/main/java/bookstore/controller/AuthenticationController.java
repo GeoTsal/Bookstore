@@ -9,7 +9,7 @@ public class AuthenticationController {
     
     @GetMapping("/login")
     public String showLoginPage(){
-        return "login";
+        return "login-form";
     }
     
     @GetMapping("/access-denied")
