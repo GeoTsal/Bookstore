@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 Απρ 2021, 5:42:21 μ.μ.
+    Author     : george
+*/
+
+#footer {
+    display: flex;
+    position: relative;
+    width: auto;
+    flex-flow:  wrap;
+}
+
+.footerBlock {
+    position: relative;
+    flex: 1 1 200px;
+    width: auto;
+    line-height: 2;
+}
+
+#whoweare {
+    position: relative;
+    background-color: #ededed;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+#helpfulLinks {
+    /*! text-align: center; */
+    
+    background-color: #ededed;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+}
+
+#helpfulLinks ul {
+    text-align: start;
+    padding-left: 25%;
+    margin-top: 0;
+}
+
+#helpfulLinks a {
+    text-decoration: none;
+    color: black;
+}
+
+#socialLinks {
+    display: flex;
+    background-color: #e0e0e0;
+    justify-content: center;
+}
+#socialLinks img {
+    padding-top: 5px;
+    margin-right: 10px;
+} 
+
+#socialLinks ul {        
+    left: 25%;
+    position: initial;
+    padding-left: 0px;
+}
