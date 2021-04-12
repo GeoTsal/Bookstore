@@ -1,7 +1,7 @@
 <%-- 
     Document   : home
     Created on : Feb 18, 2021, 8:46:36 PM
-    Author     : user
+    Author     : Georgios Tsalikis
 --%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
@@ -12,17 +12,22 @@
 
 <html>
 <head>
-    <title>TODO supply a title</title>
+    <title>Bookaporta bookstore - Cart</title>
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!--  <link href="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/george.css" rel="stylesheet" type="text/css"/> -->
     <!-- Style for header included here due to path issues. -->
 <style>
+
 body {
      box-sizing: content-box ;    
      width: 1182px ; 
      margin: 0 auto;        
 }
 
+h3 { position: relative; 
+     text-align: center; 
+     font-family:  Georgia, serif; font-size: 16pt;
+}
 header {
      display: flex;
      flex-flow: column;
@@ -272,11 +277,15 @@ hr.thin-line-separator {
  width: 1182px;
 
 }
-    
-    * {
-        font-family: "Arial", "Helvetica", sans-serif;
-    }
-    
+
+hr.thick-line-separator {
+    height: 3px; 
+    border-width: 0; 
+    color: #2794ad;
+    background-color: #2794ad;  
+    width: 1182px;
+}
+
     
   /***      ***  CART-INDEX styles  ***   ***/
   
@@ -593,6 +602,7 @@ table.group-b {
     <h1>Your cart is currently empty.</h1>
     <a id="continue-shopping" style="padding-bottom: 7px; font-size: 22pt;" href="${pageContext.request.contextPath}/home">Buy yourself something first!</a>
 </div>
+
 <section id="cart-section">
 
  
@@ -600,9 +610,9 @@ table.group-b {
 
     
     <div class="title">
-            <h1>Shopping Cart</h1>
+            <h3>Shopping Cart</h3>
 
-        <hr/>
+        <hr class="thick-line-separator"/>
     </div>
  <div style="display: flex; flex-direction: row;">
 <div class="shopping-cart">   
