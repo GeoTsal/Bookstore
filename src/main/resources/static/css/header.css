@@ -1,0 +1,277 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 Απρ 2021, 5:29:56 μ.μ.
+    Author     : Georgios Tsalikis
+*/
+
+body {
+     box-sizing: content-box ;    
+     width: 1182px ; 
+     margin: 0 auto;        
+}
+
+h3 { position: relative; 
+     text-align: center; 
+     font-family:  Georgia, serif; font-size: 16pt;
+}
+header {
+     display: flex;
+     flex-flow: column;
+     height: 130px;
+}
+
+#top-box {
+    width: 100vw;
+    height: 15px;
+    position: fixed;
+    z-index: 2;
+    background-color: #ffd04d;
+    right: 0px;
+    top: 0;
+}  
+#top-container {
+    height: 70px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 1182px;
+    top: 40px;
+    position: relative;
+}
+#logo {
+	/* ; */
+	cursor: pointer;
+	position: relative;
+	/*! top: 50px; */
+	/* left: 60px; */
+	margin-left: 20px;
+        height: 60px;
+	flex: 0 0 270px;
+}
+
+#search {
+
+	display: inline-flex;
+	position: relative;
+	margin: 0 20px;
+	/* padding-top: 20px; */
+	/*! top: 50px; */
+	height: 60px;
+	/*! width: 450px; */
+	/*! float: right; */	font-size: 16pt;
+	/*! flex: 1 1; */
+}
+#searchBar {
+	position: relative;
+	display: inline-flex;
+	/*! width: 200px; */
+	/*! flex: 0 0 60px; */
+	/*! border-radius: 3px 0 0 3px; */
+	/*! margin: 0 auto; */
+	/*! left: 100px; */
+	/*! top: 15px; */
+}
+input#searchField {
+    position: relative;
+ left: 0;   
+ font-size: 16px;
+ margin: 0;
+}
+   
+#searchBar #searchBox input[type="submit"] {
+	display: flex;
+	flex: 0 0 40px;
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 24px;
+	padding-left: 24px;
+	background-color: #ffd04d;
+	height: 60px;
+
+	color: #ffd04d;
+	cursor: pointer;
+	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/magnifier.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 19px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ffd04d;
+	border-radius: 0 3px 3px 0;
+        margin: 0 0 0 -2px;
+	font-size: 0;
+        left: 0;
+    }
+
+#account-checkbox {
+        /*! left: 3%; */
+	/*! bottom: 30px; */
+	position: relative;
+        height: 40px;
+	color: black;
+	border: none;
+	border-bottom: 3px solid #2794ad;
+	font-size: 14pt;
+        height: 30px;
+        text-decoration: none;
+        background-color: transparent;
+}
+
+.myAccount {
+	/* display: flex; */
+	position: relative;
+	height: min-content;
+	top: 10px;
+	/* left: 70%; */
+	/* flex: 0 0 800px; */
+}
+.myAccount p {
+    font-family: "Georgia", serif;
+    font-style: oblique;
+    font-size: 12pt;
+    border: none;
+    bottom: 2px;
+    /*! position: absolute; */
+    width: max-content;
+    margin: 0;
+}
+.myAccount-modal {
+        position: relative;
+        display: inline-block;
+        left: 350px;
+        top: 20px;
+    }
+    
+
+#my-account-menu  li {
+text-align: end;
+
+padding-right: 10px;
+}
+ul#my-account-menu  {
+ list-style-type: none;
+}
+
+#my-account-menu a {
+
+    
+    
+    color: black;
+    text-decoration: none;
+    font-size: 14pt;
+}
+#login-modal {
+	position: absolute;
+	font-family: Helvetica, Arial, sans-serif;
+	z-index: 10;
+	height: auto;
+	width: 200px;
+	background-color: white;
+	color: #2794ad;
+	display: none;
+	border-radius: 5px;
+	border: 1px solid #cccccc;
+	right: 105px;
+	top: 75px;
+	/* width: min-content; */        font-size: 14pt;
+  text-decoration: none;
+	text-align: start;
+	box-shadow: 3px 3px 12px lightgrey;
+}
+   
+#command {
+ display: grid;
+ background: none;
+ /*! color: beige; */
+}
+
+#cart {
+	position: relative;
+	display: flex;
+	color: black;
+	cursor: pointer;
+	/* margin-left: 40px; */
+	height: 80px;
+	width: 80px;
+	/*! flex: 0 0; */
+	/*! left: 30px; */
+	/*! bottom: 20px; */
+}
+
+#cart-img {
+	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/basket-empty.png");
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	bottom: 28px;
+	right: 3px;
+}
+
+#cart-elipse {
+    background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/basket+elipse.png");
+	background-size: 40px 35px;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 40px;
+        display: block;
+    z-index: -1;
+    bottom: 6px;
+}
+#cart-amount {        
+    position: relative;
+    /*! top: 34px; */
+    left: 28px;
+    /*! width: min-content; */
+    /*! z-index: 2; */
+    /*! height: min-content; */
+}  
+#cart a {
+	/*! bottom: 200px; */
+        /*! left: 36px; */
+	position: relative;
+        text-decoration: none;
+        color: black;
+        display: block;
+}   
+    
+.clickable {
+ height: 80px;
+ width: 80px;
+ /*! right: 50px; */
+ position: relative;
+}
+  
+
+.clickable p {  
+	margin: 0;
+	width: min-content;
+	position: relative;
+	bottom: 25px;
+	left: 4px;
+}
+
+
+hr.thin-line-separator {
+    height: 1px; 
+    border-width: 0; 
+    /*! color: #ff8181; */ 
+    background-color: #c3c3c3;
+     top: 50px;
+ position: relative;
+ width: 1182px;
+
+}
+
+hr.thick-line-separator {
+    height: 3px; 
+    border-width: 0; 
+    color: #2794ad;
+    background-color: #2794ad;  
+    width: 1182px;
+}
