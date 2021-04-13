@@ -32,7 +32,7 @@ public class RegistrationController {
         
         model.addAttribute("countries", countries);
         
-        return "register";
+        return "register-form";
     }
     
     @PostMapping("/register")
