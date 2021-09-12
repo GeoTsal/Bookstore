@@ -5,14 +5,15 @@ and open the template in the editor.
 */
 /* 
     Created on : 12 Απρ 2021, 5:42:21 μ.μ.
-    Author     : george
+    Author     : Georgios Tsalikis
 */
 
+      /***           ***          ***           FOOTER styles         ***           ***          ***         ***/
 #footer {
     display: flex;
     position: relative;
     width: auto;
-    flex-flow:  wrap;
+    flex-flow:  wrap-reverse;
 }
 
 .footerBlock {
