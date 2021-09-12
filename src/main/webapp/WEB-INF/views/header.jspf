@@ -126,3 +126,28 @@
 </header>
             
  <hr class="thin-line-separator" />       
+
+ 
+ <script>
+     
+    let loginModal = document.getElementById("login-modal").style;
+    function toggleModal()
+    {
+        if (loginModal.display !== "inline-block") loginModal.display = "inline-block";
+        else loginModal.display = "none";
+    }
+
+    
+    if (<%=cartAmount%> === 0) {
+        document.getElementById("cart-wbubble").style.visibility = "hidden";
+        document.getElementById("cart-amount").style.visibility = "hidden";
+        document.getElementById("empty-cart").style.visibility = "visible";
+    } else {
+        document.getElementById("cart-wbubble").style.visibility = "visible";
+        document.getElementById("cart-amount").style.visibility = "visible";
+        document.getElementById("empty-cart").style.visibility = "hidden";
+    }
+    if (<%=cartAmount%> > 9) {
+        document.getElementById("cart-amount").style.left = "57px"; 
+    }
+</script>
