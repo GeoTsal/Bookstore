@@ -1,7 +1,7 @@
 <%-- 
     Document   : footer
     Created on : 29 Μαρ 2021, 1:23:58 π.μ.
-    Author     : george
+    Author     : Georgios Tsalikis
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,20 +9,22 @@
 
 
 <footer>
-<hr style="height: 1px; border-width: 0; color: #2794ad; background-color: #2794ad;"/>  
+<hr class="thick-line-separator"/>  
 
 <div id="footer">
     
-    <div style="text-align: center; padding-bottom: 20px; margin: 0;" id="whoweare" class="footerBlock">
-        <p>Who we are</p>
-        <p> At BookaPorta, we love high street shopping. From browsing to buying, finding new shops to meeting passionate staff. If we could live in a bookshop, we’d probably do it. Therefore, we decided to open a bookshop ourselves.
-            We're working hard to keep that fun and sociable shopping experience alive for 15 years. </p>
+    <div  id="whoweare" class="footerBlock">
+        <ul class="no-bullets" style="padding: 5px">&COPY; 2021
+            <li>Dimitrios Bouzoukas</li>
+            <li>Stathis Karampelas</li>
+            <li>Georgios Tsalikis</li>
+            <li>Antonis Glykos</li>
     </div>
     
     <div id="helpfulLinks" class="footerBlock">
-        <p style="text-align: center;  padding-bottom: 20px;">Helpful links</p>
-        <ul>
-            <li><a href="/bookstore/login">Sign in / Register</a></li>
+        <p style="text-align: center;">Helpful links</p>
+        <ul style="margin-left: 30px;">
+            <li><a href="/login">Sign in / Register</a></li>
             <li><a href="#">My Account</a></li>
             <li><a href="${pageContext.request.contextPath}/contact">Contact us</a></li>
             <li><a href="${pageContext.request.contextPath}/faqs">FAQs</a></li>
@@ -31,16 +33,13 @@
     </div>
     
     <div id="socialLinks" class="footerBlock">
-        <ul         style="float: left;
-        left: 17%;">
+        <ul class="no-bullets" style="float: left; ; left: 17%;">
             <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/f_logo_RGB-Blue_128.png" width="24" height="24" alt="Facebook logo"/>Facebook</span></li>
             
             <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/2021+Twitter+logo+-+blue-128.png" width="24" height="24" alt="Twitter logo"/>Twitter</span></li>
             
             <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/pinterest-logo-128.png" alt="Pinterest logo" width="24" height="24"/>Pinterest</span></li>
-            <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/yt_logo_rgb_light-128.png" alt="YouTube logo"  height="16"/></span></li>
-            
-            
+            <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/yt_logo_rgb_light-128.png" alt="YouTube logo"  height="16"/></span></li>  
         </ul>
     </div>
          
