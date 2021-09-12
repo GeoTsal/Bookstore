@@ -20,7 +20,7 @@
 <style>
  body {
      box-sizing: content-box ;    
-     width: 1182px ; 
+     max-width: 1182px ; 
      margin: 0 auto;        
 }
 
@@ -30,14 +30,17 @@ h3 { position: relative;
 }
     
     /***         ***   Styles for header   ***          ***/
-
+/*
 header {
-     display: flex;
+     display: inline-block;
      flex-flow: column;
      height: 130px;
 }
-
-#top-box {
+*/
+input {
+    padding: 15px;
+}
+#top-stripe {
     width: 100vw;
     height: 15px;
     position: fixed;
@@ -48,24 +51,23 @@ header {
 }  
 #top-container {
     height: 70px;
-    display: inline-flex;
-    flex-flow: row wrap;
+    display: flex;
+    flex-flow: column wrap;
     justify-content: space-between;
     width: 1182px;
     top: 40px;
     position: relative;
 }
 #logo {
-	/* ; */
 	cursor: pointer;
 	position: relative;
-	/*! top: 50px; */
-	/* left: 60px; */
 	margin-left: 20px;
-        height: 60px;
-	flex: 0 0 270px;
+	flex: 2 2 50px;
 }
 
+ul.no-bullets {
+    list-style-type: none;
+}
 #search {
 
 	display: inline-flex;
@@ -122,26 +124,25 @@ input#searchField {
     }
 
 #account-checkbox {
-        /*! left: 3%; */
-	/*! bottom: 30px; */
+	/* left: 3%; */
+	/* bottom: 30px; */
 	position: relative;
-        height: 40px;
+	height: 40px;
 	color: black;
 	border: none;
 	border-bottom: 3px solid #2794ad;
 	font-size: 14pt;
-        height: 30px;
-        text-decoration: none;
-        background-color: transparent;
+	/* height: 30px; */
+	text-decoration: none;
+	background-color: transparent;
+        padding: 0;
 }
 
 .myAccount {
-	/* display: flex; */
+	display: flex;
 	position: relative;
 	height: min-content;
-	top: 10px;
-	/* left: 70%; */
-	/* flex: 0 0 800px; */
+	flex-flow: column;
 }
 .myAccount p {
     font-family: "Georgia", serif;
@@ -162,12 +163,19 @@ input#searchField {
     
 
 #my-account-menu  li {
-text-align: end;
+text-align: center;
 
-padding-right: 10px;
 }
+
 ul#my-account-menu  {
- list-style-type: none;
+ list-style-type: none; 
+ color: red; 
+ font-size:0.7em;
+ padding: 10px;
+}
+
+ul.no-bullets {
+    list-style-type: none;
 }
 
 #my-account-menu a {
@@ -178,95 +186,91 @@ ul#my-account-menu  {
     text-decoration: none;
     font-size: 14pt;
 }
+
+#my-account-menu li > form {
+    padding: 0;
+}
 #login-modal {
 	position: absolute;
 	font-family: Helvetica, Arial, sans-serif;
 	z-index: 10;
 	height: auto;
-	width: 200px;
+	width: 150px;
 	background-color: white;
 	color: #2794ad;
 	display: none;
 	border-radius: 5px;
 	border: 1px solid #cccccc;
-	right: 105px;
+	right: 107px;
 	top: 75px;
-	/* width: min-content; */        font-size: 14pt;
-  text-decoration: none;
+	/* width: min-content; */
+	font-size: 14pt;
 	text-align: start;
-	box-shadow: 3px 3px 12px lightgrey;
+	box-shadow: 3px 3px 12px black;
 }
    
 #command {
- display: grid;
+ display: flex;
+ flex-flow: column;
  background: none;
  /*! color: beige; */
 }
 
 #cart {
 	position: relative;
-	display: flex;
+	/* display: flex; */
 	color: black;
 	cursor: pointer;
 	/* margin-left: 40px; */
 	height: 80px;
 	width: 80px;
-	/*! flex: 0 0; */
-	/*! left: 30px; */
-	/*! bottom: 20px; */
+	/* flex-basis: 100px; */
+	left: 30px;
+	bottom: 10px;
 }
 
-#cart-img {
-	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/basket-empty.png");
-	background-size: 50px 50px;
+#empty-cart {
+	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/empty-cart.png");
+	background-size: 45px 48px;
 	background-repeat: no-repeat;
-	width: 50px;
+	width: 80px;
 	height: 50px;
-	bottom: 28px;
-	right: 3px;
+	display: block;
+	bottom: 33px;
+	left: 6px;
 }
 
-#cart-elipse {
-    background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/basket+elipse.png");
-	background-size: 40px 35px;
+#cart-wbubble {
+	background-image: url("https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/full-cart.png");
+	background-size: 73px 50px;
 	background-repeat: no-repeat;
-	width: 40px;
-	height: 40px;
-        display: block;
-    z-index: -1;
-    bottom: 6px;
+	width: 80px;
+	height: 50px;
+	display: block;
+	top: 15px;
+	left: 5px;
 }
-#cart-amount {        
-    position: relative;
-    /*! top: 34px; */
-    left: 28px;
-    /*! width: min-content; */
-    /*! z-index: 2; */
-    /*! height: min-content; */
-}  
+
+
+#cart-amount {
+	position: absolute;
+	left: 62.2px;
+	bottom: 44.5px;
+	z-index: 3;
+	font-size: 0.9em;
+}
+
 #cart a {
-	/*! bottom: 200px; */
-        /*! left: 36px; */
 	position: relative;
-        text-decoration: none;
-        color: black;
-        display: block;
+	text-decoration: none;
+	color: black;
+	display: block;
 }   
     
 .clickable {
  height: 80px;
  width: 80px;
- /*! right: 50px; */
  position: relative;
-}
-  
-
-.clickable p {  
-	margin: 0;
-	width: min-content;
-	position: relative;
-	bottom: 25px;
-	left: 4px;
 }
 
 
@@ -275,66 +279,88 @@ hr.thin-line-separator {
     border-width: 0; 
     /*! color: #ff8181; */ 
     background-color: #c3c3c3;
-     top: 50px;
+     /* top: 50px; */
  position: relative;
+ margin: 50px 0 0 0;
  width: 1182px;
 
 } 
-    
-    
+
+ hr.thick-line-separator {
+    height: 1px; 
+    border-width: 0; 
+    color:  #2794ad; 
+    background-color: #2794ad; 
+    /* top: 50px;*/
+ position: relative;
+ width: 1182px;   
+ }  
   /***         ***   Styles for Login Page   ***           ***/
   
   
 #login-area {
     display: flex;
-    flex-flow: wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
+    max-height: 700px;
 }
-.log-reg-box {
+.login-box {
     border: 1px solid #2794ad;
     height: 450px;
     display: flex;
-    flex: 1 1 400px;
+    flex: 2 2 350px;
     
     text-align: center;
      align-content: center;
      justify-content: center;
      margin: 10px;
-     flex-basis: 200px;
+ 
 }
 
-.credentials {
-     
-    position: relative;
+.register-box {
+    border: 1px solid #2794ad;
+    height: 450px;
+    display: flex;
+    flex: 2 2 200px;
     
-    margin: 50px;
+    text-align: center;
+     align-content: center;
+     justify-content: center;
+     margin: 10px;
+
+}
+
+.credentials {    
+    position: relative;  
+    margin: 40px;
     height: 50px;
     display: flex;
 
 }
 .credentials input {
     font-family: serif;
-    font-size: 14pt;
-    
+    font-size: 14pt;    
 }
 
 .login-button input, 
 .register-button  button {
     font-family: "Georgia", serif;
+    font-size: 1.5em;
     position: relative;
     right: 10px;
     bottom: 10px;
     text-align: center; 
-    width: 80px; 
-    height: 40px; 
+    width: auto; 
+    height: 45px; 
     background-color: #2794ad; 
     color: white; 
     cursor: pointer;
     border: 2px solid #2794ad; 
     border-radius: 3px;
+    padding-top: 4px;
 }
 
-.log-reg-box p {
+.login-box p {
     font-size: 16pt;
         
 }
@@ -344,7 +370,7 @@ hr.thin-line-separator {
     display: flex;
     position: relative;
     width: auto;
-    flex-flow:  wrap;
+    flex-flow:  wrap-reverse;
 }
 
 .footerBlock {
@@ -400,15 +426,15 @@ hr.thin-line-separator {
 }
 </style>
 </head>
-
+<div id="top-stripe"></div>
 <body>
 <header id="main-header">
-    <div id="top-box"></div>
+  
     
     <div id="top-container">   
         
         <div id="logo">
-            <a href="/bookstore/">
+            <a href="/">
                 <img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/bookaporta-logo.png"  width="300" height="50"  alt="Bookaporta logo"/>   
             </a>
         </div>
@@ -512,20 +538,21 @@ hr.thin-line-separator {
                   
               </c:forEach>
               
-             <div id="cart-amount"><%=cartAmount%>​​​​​​​</div>
+             
              <div class="clickable">
-            <a id="cart-elipse" href="${pageContext.request.contextPath}/cart/index"></a>     
-            <a id="cart-img" href="${pageContext.request.contextPath}/cart/index"></a>
-            <p>Cart</p>
+                 <a id="cart-wbubble" href="${pageContext.request.contextPath}/cart/index"></a>
+                 <a id="empty-cart" href="${pageContext.request.contextPath}/cart/index"></a>
+                 <div id="cart-amount"><%=cartAmount%>​​​​​​​</div>
             </div>  
         </div>         
     </div>
 
 
-<hr class="thin-line-separator" />
+
    
 </header>
-        
+            
+ <hr class="thin-line-separator" />       
 
  <h3 style="position: relative; text-align: center; font-family:  Georgia, serif; font-size: 16pt;">Account login & registration</h3>  
                  <!-- Checks for different messages document.getElementById("#login-area").style.display = "none"-->
@@ -533,23 +560,23 @@ hr.thin-line-separator {
         <h2 style="color: red; text-align: center;">You logged out successfully</h2>
     </c:if>
                 
-
+<br/>
 
     <c:if test="${requestScope.registered != null}">
         <div class="registered">
             <h2 style="color: red; text-align: center;">Successfully registered. Try to sign in!!!</h2>
         </div>
     </c:if>
- 
+
  <div id="login-area">
-     <div class="log-reg-box" >
+     <div class="login-box">
         <!-- Login Form --> 
         <form:form action="${pageContext.request.contextPath}/authenticate" method="post">
-            
+            <br/>
             <p>Are you already a member?</p>
             
             <div class="credentials">
-                <input type="text" id="login" name="username" placeholder="login" size="40" required>
+                <input type="text" id="login" name="username" placeholder="login"  size="23" required>
             </div>           
             <div>         
         <c:if test="${param.error != null}">
@@ -560,7 +587,7 @@ hr.thin-line-separator {
         </c:if> 
             </div>
             <div class="credentials">
-                <input type="password" id="password" name="password" placeholder="password" size="40" required>
+                <input type="password" id="password" name="password" placeholder="password" size="23" required>
             </div>
            
 
@@ -573,13 +600,16 @@ hr.thin-line-separator {
      </div>
             
     
-    <div class="log-reg-box">
+    <div class="register-box">
+          
         <!-- Register -->
         <div>
+            <br/>
             <p>Don't have an account?</p>
+            <br/>
             <p style="font-size: 12pt; margin: 30px;">Take advantage of having a BookaPorta account and benefit 
                 from easier transactions, offers and more...</p>
-            
+            <br/><br/>
             <div class="register-button">
                 <a href="${pageContext.request.contextPath}/register"><Button>Register</button></a>
                 
@@ -591,20 +621,22 @@ hr.thin-line-separator {
  </div>
 
 <footer>
-<hr style="height: 1px; border-width: 0; color: #2794ad; background-color: #2794ad;"/>  
+<hr class="thick-line-separator"/>  
 
 <div id="footer">
     
-    <div style="text-align: center; padding-bottom: 20px; margin: 0;" id="whoweare" class="footerBlock">
-        <p>Who we are</p>
-        <p> At BookaPorta, we love high street shopping. From browsing to buying, finding new shops to meeting passionate staff. If we could live in a bookshop, we’d probably do it. Therefore, we decided to open a bookshop ourselves.
-            We're working hard to keep that fun and sociable shopping experience alive for 15 years. </p>
+    <div  id="whoweare" class="footerBlock">
+        <ul class="no-bullets" style="padding: 5px">&COPY; 2021
+            <li>Dimitrios Bouzoukas</li>
+            <li>Stathis Karampelas</li>
+            <li>Georgios Tsalikis</li>
+            <li>Antonis Glykos</li>
     </div>
     
     <div id="helpfulLinks" class="footerBlock">
-        <p style="text-align: center;  padding-bottom: 20px;">Helpful links</p>
-        <ul>
-            <li><a href="/bookstore/login">Sign in / Register</a></li>
+        <p style="text-align: center;">Helpful links</p>
+        <ul style="margin-left: 30px;">
+            <li><a href="/login">Sign in / Register</a></li>
             <li><a href="#">My Account</a></li>
             <li><a href="${pageContext.request.contextPath}/contact">Contact us</a></li>
             <li><a href="${pageContext.request.contextPath}/faqs">FAQs</a></li>
@@ -613,16 +645,13 @@ hr.thin-line-separator {
     </div>
     
     <div id="socialLinks" class="footerBlock">
-        <ul         style="float: left;
-        left: 17%;">
+        <ul class="no-bullets" style="float: left; ; left: 17%;">
             <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/f_logo_RGB-Blue_128.png" width="24" height="24" alt="Facebook logo"/>Facebook</span></li>
             
             <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/2021+Twitter+logo+-+blue-128.png" width="24" height="24" alt="Twitter logo"/>Twitter</span></li>
             
             <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/pinterest-logo-128.png" alt="Pinterest logo" width="24" height="24"/>Pinterest</span></li>
-            <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/yt_logo_rgb_light-128.png" alt="YouTube logo"  height="16"/></span></li>
-            
-            
+            <li><span class="social-rendering"><img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/yt_logo_rgb_light-128.png" alt="YouTube logo"  height="16"/></span></li>  
         </ul>
     </div>
          
@@ -641,8 +670,16 @@ hr.thin-line-separator {
 
     
     if (<%=cartAmount%> === 0) {
-        document.getElementById("cart-elipse").style.visibility = "hidden";
+        document.getElementById("cart-wbubble").style.visibility = "hidden";
         document.getElementById("cart-amount").style.visibility = "hidden";
+        document.getElementById("empty-cart").style.visibility = "visible";
+    } else {
+        document.getElementById("cart-wbubble").style.visibility = "visible";
+        document.getElementById("cart-amount").style.visibility = "visible";
+        document.getElementById("empty-cart").style.visibility = "hidden";
+    }
+    if (<%=cartAmount%> > 9) {
+        document.getElementById("cart-amount").style.left = "57px"; 
     }
 </script>
 </body>
