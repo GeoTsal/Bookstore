@@ -15,15 +15,13 @@
 <link href="../../../resources/static/css/header.css" rel="stylesheet" type="text/css"/>
 
 </head>
-
-<body>
 <header id="main-header">
-    <div id="top-box"></div>
+  
     
     <div id="top-container">   
         
         <div id="logo">
-            <a href="/bookstore/">
+            <a href="/">
                 <img src="https://peoplecertproject.s3.eu-central-1.amazonaws.com/UI/bookaporta-logo.png"  width="300" height="50"  alt="Bookaporta logo"/>   
             </a>
         </div>
@@ -127,20 +125,22 @@
                   
               </c:forEach>
               
-             <div id="cart-amount"><%=cartAmount%>​​​​​​​</div>
+             
              <div class="clickable">
-            <a id="cart-elipse" href="${pageContext.request.contextPath}/cart/index"></a>     
-            <a id="cart-img" href="${pageContext.request.contextPath}/cart/index"></a>
-            <p>Cart</p>
+                 <a id="cart-wbubble" href="${pageContext.request.contextPath}/cart/index"></a>
+                 <a id="empty-cart" href="${pageContext.request.contextPath}/cart/index"></a>
+                 <div id="cart-amount"><%=cartAmount%>​​​​​​​</div>
             </div>  
         </div>         
     </div>
 
 
-<hr class="thin-line-separator" />
+
    
 </header>
+            
  <script>
+     
     let loginModal = document.getElementById("login-modal").style;
     function toggleModal()
     {
@@ -150,7 +150,15 @@
 
     
     if (<%=cartAmount%> === 0) {
-        document.getElementById("cart-elipse").style.visibility = "hidden";
+        document.getElementById("cart-wbubble").style.visibility = "hidden";
         document.getElementById("cart-amount").style.visibility = "hidden";
+        document.getElementById("empty-cart").style.visibility = "visible";
+    } else {
+        document.getElementById("cart-wbubble").style.visibility = "visible";
+        document.getElementById("cart-amount").style.visibility = "visible";
+        document.getElementById("empty-cart").style.visibility = "hidden";
     }
-</script>   
+    if (<%=cartAmount%> > 9) {
+        document.getElementById("cart-amount").style.left = "57px"; 
+    }
+</script>
