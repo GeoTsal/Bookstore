@@ -9,13 +9,20 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>bookstore</groupId>
-    <artifactId>bookstore</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>bookstore</name>
-    <description>Team project</description>
+    <artifactId>bookstore2</artifactId>
+    <version>1.9.9-SNAPSHOT</version>
+    <name>Bookstore 2.0</name>
+    <description>Team project by
+
+Dimitrios Bouzoukas
+Stathis Karampelas
+Georgios Tsalikis
+Antonis Glykos</description>
     <properties>
         <java.version>1.8</java.version>
         <start-class>bookstore.MainApplication</start-class>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
